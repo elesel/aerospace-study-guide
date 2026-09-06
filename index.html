@@ -389,6 +389,12 @@
       margin-bottom: 0;
     }
 
+    .correct-answer {
+      display: block;
+      margin-top: 0.65rem;
+      font-weight: 800;
+    }
+
     .actions {
       display: flex;
       flex-wrap: wrap;
@@ -814,8 +820,13 @@
         } else {
           buttons[index].classList.add("is-incorrect");
           feedbackTitle.textContent = "Not quite.";
-          feedbackText.textContent =
-            `${selected.explanation} Correct answer: ${currentFullAnswer}`;
+          const correctAnswer = document.createElement("strong");
+          correctAnswer.className = "correct-answer";
+          correctAnswer.textContent = `Correct answer: ${currentFullAnswer}`;
+          feedbackText.replaceChildren(
+            document.createTextNode(selected.explanation),
+            correctAnswer
+          );
           quizFeedback.classList.add("is-incorrect");
         }
 
