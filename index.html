@@ -542,7 +542,7 @@
           <div class="quiz-choices" id="quizChoices" hidden></div>
 
           <div class="answer" id="answerBox" hidden aria-live="polite">
-            <p class="answer-label">Answer</p>
+            <p class="answer-label" id="answerLabel">Answer</p>
             <p id="answerText"></p>
           </div>
 
@@ -593,6 +593,7 @@
       const questionText = document.getElementById("questionText");
       const quizChoices = document.getElementById("quizChoices");
       const answerBox = document.getElementById("answerBox");
+      const answerLabel = document.getElementById("answerLabel");
       const answerText = document.getElementById("answerText");
       const quizFeedback = document.getElementById("quizFeedback");
       const feedbackTitle = document.getElementById("feedbackTitle");
@@ -737,6 +738,7 @@
         quizAnswered = false;
         questionText.textContent = question.question;
         answerBox.hidden = true;
+        answerLabel.hidden = false;
         quizFeedback.hidden = true;
         quizFeedback.className = "quiz-feedback";
         quizChoices.replaceChildren();
@@ -848,12 +850,15 @@
       function showQuizResults() {
         const total = questionOrder.length;
         const percentage = Math.round((score / total) * 100);
+        const passed = score / total >= 0.8;
         quizComplete = true;
         quizChoices.hidden = true;
         quizChoices.replaceChildren();
         quizFeedback.hidden = true;
         questionText.textContent = `You scored ${score} out of ${total}.`;
-        answerText.textContent = `${percentage}% correct`;
+        answerLabel.hidden = true;
+        answerText.textContent =
+          `${percentage}% correct — You ${passed ? "passed" : "did not pass"}.`;
         answerBox.hidden = false;
         actionButton.hidden = false;
         actionButton.textContent = "Return to Main Menu";
