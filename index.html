@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aerospace Dimensions Study Guide</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #003b5c;
+      --blue: #006b9f;
+      --sky: #e9f5fb;
+      --red: #a61e2d;
+      --ink: #17242c;
+      --muted: #536672;
+      --line: #c9d9e2;
+      --white: #ffffff;
+      --shadow: 0 18px 48px rgba(14, 47, 65, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(87, 181, 224, 0.22), transparent 30rem),
+        linear-gradient(145deg, #f7fbfd 0%, #e8f2f7 100%);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 4.5rem;
+      padding: 0.8rem clamp(1rem, 4vw, 3rem);
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: 0 3px 14px rgba(0, 33, 51, 0.25);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 2.5rem;
+      height: 2.5rem;
+      place-items: center;
+      border: 2px solid rgba(255, 255, 255, 0.75);
+      border-radius: 50%;
+      font-size: 1.25rem;
+    }
+
+    .menu-button {
+      flex: 0 0 auto;
+      padding: 0.65rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: 0.55rem;
+      background: transparent;
+      color: var(--white);
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .menu-button:hover,
+    .menu-button:focus-visible {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    main {
+      width: min(70rem, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 4.5rem) 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.5rem;
+      color: var(--red);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 15ch;
+      margin-bottom: 0.8rem;
+      color: var(--navy);
+      font-size: clamp(2.2rem, 6vw, 4.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .intro {
+      max-width: 44rem;
+      margin-bottom: 2rem;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      line-height: 1.65;
+    }
+
+    .mode-selector {
+      display: inline-flex;
+      gap: 0.35rem;
+      margin-bottom: 1.5rem;
+      padding: 0.35rem;
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+      background: rgba(255, 255, 255, 0.75);
+    }
+
+    .mode-button {
+      padding: 0.7rem 1.1rem;
+      border: 0;
+      border-radius: 0.5rem;
+      background: transparent;
+      color: var(--navy);
+      cursor: pointer;
+      font-weight: 750;
+    }
+
+    .mode-button[aria-pressed="true"] {
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: 0 5px 14px rgba(0, 59, 92, 0.2);
+    }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+      gap: 1rem;
+    }
+
+    .module-card {
+      min-height: 10rem;
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 0.9rem;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--ink);
+      cursor: pointer;
+      text-align: left;
+      box-shadow: 0 8px 24px rgba(21, 61, 82, 0.08);
+      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    .module-card:hover,
+    .module-card:focus-visible {
+      transform: translateY(-3px);
+      border-color: var(--blue);
+      box-shadow: 0 12px 28px rgba(21, 61, 82, 0.16);
+    }
+
+    .module-number {
+      display: block;
+      margin-bottom: 1.5rem;
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .module-title {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+      font-size: 1.2rem;
+      font-weight: 750;
+      line-height: 1.2;
+    }
+
+    .question-count {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .quiz-setup-panel {
+      max-width: 38rem;
+      padding: clamp(1.5rem, 5vw, 2.5rem);
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .quiz-setup-panel h2 {
+      margin-bottom: 0.65rem;
+      color: var(--navy);
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+    }
+
+    .quiz-setup-panel .intro {
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-length-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+      font-weight: 750;
+    }
+
+    .quiz-length-input {
+      width: min(100%, 12rem);
+      padding: 0.8rem 0.9rem;
+      border: 2px solid var(--line);
+      border-radius: 0.6rem;
+      color: var(--ink);
+      font: inherit;
+      font-size: 1.05rem;
+    }
+
+    .quiz-length-input:focus {
+      border-color: var(--blue);
+    }
+
+    .study-panel {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .study-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem clamp(1.2rem, 4vw, 2.25rem);
+      border-bottom: 1px solid var(--line);
+      background: var(--sky);
+      color: var(--navy);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .question-area {
+      padding: clamp(1.5rem, 6vw, 3.75rem);
+    }
+
+    .question-label,
+    .answer-label {
+      margin-bottom: 0.7rem;
+      color: var(--red);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .question {
+      margin-bottom: 0;
+      color: var(--navy);
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .answer {
+      margin-top: 2rem;
+      padding: 1.25rem 1.4rem;
+      border-left: 0.32rem solid var(--blue);
+      border-radius: 0.4rem;
+      background: var(--sky);
+    }
+
+    .answer p:last-child {
+      margin-bottom: 0;
+      font-size: clamp(1.05rem, 2.3vw, 1.25rem);
+      line-height: 1.6;
+    }
+
+    .quiz-choices {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 2rem;
+    }
+
+    .quiz-choice {
+      display: grid;
+      grid-template-columns: 2.4rem 1fr;
+      gap: 0.8rem;
+      align-items: center;
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 2px solid var(--line);
+      border-radius: 0.7rem;
+      background: var(--white);
+      color: var(--ink);
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 140ms ease, background 140ms ease;
+    }
+
+    .quiz-choice:hover:not(:disabled),
+    .quiz-choice:focus-visible:not(:disabled) {
+      border-color: var(--blue);
+      background: var(--sky);
+    }
+
+    .quiz-choice:disabled {
+      cursor: default;
+      opacity: 1;
+    }
+
+    .choice-letter {
+      display: grid;
+      width: 2.2rem;
+      height: 2.2rem;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--sky);
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    .quiz-choice.is-correct {
+      border-color: #23834b;
+      background: #edf9f1;
+    }
+
+    .quiz-choice.is-correct .choice-letter {
+      background: #23834b;
+      color: var(--white);
+    }
+
+    .quiz-choice.is-incorrect {
+      border-color: var(--red);
+      background: #fff1f2;
+    }
+
+    .quiz-choice.is-incorrect .choice-letter {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .quiz-feedback {
+      margin-top: 1.5rem;
+      padding: 1.15rem 1.3rem;
+      border-left: 0.32rem solid var(--blue);
+      border-radius: 0.4rem;
+      background: var(--sky);
+      line-height: 1.55;
+    }
+
+    .quiz-feedback.is-correct {
+      border-left-color: #23834b;
+      background: #edf9f1;
+    }
+
+    .quiz-feedback.is-incorrect {
+      border-left-color: var(--red);
+      background: #fff1f2;
+    }
+
+    .feedback-title {
+      margin-bottom: 0.35rem;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .feedback-text {
+      margin-bottom: 0;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .primary-button {
+      min-width: 10rem;
+      padding: 0.85rem 1.25rem;
+      border: 0;
+      border-radius: 0.6rem;
+      background: var(--blue);
+      color: var(--white);
+      cursor: pointer;
+      font-weight: 750;
+      box-shadow: 0 7px 18px rgba(0, 107, 159, 0.22);
+    }
+
+    .primary-button:hover,
+    .primary-button:focus-visible {
+      background: var(--navy);
+    }
+
+    .keyboard-hint {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    kbd {
+      padding: 0.12rem 0.42rem;
+      border: 1px solid #aabac3;
+      border-bottom-width: 2px;
+      border-radius: 0.3rem;
+      background: #fff;
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 0.8rem;
+    }
+
+    .error {
+      padding: 1.2rem;
+      border: 1px solid #e2aab0;
+      border-radius: 0.75rem;
+      background: #fff1f2;
+      color: #71131e;
+      line-height: 1.5;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    :focus-visible {
+      outline: 3px solid #f2b134;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 34rem) {
+      .brand-mark {
+        display: none;
+      }
+
+      .study-meta {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .primary-button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>Aerospace Dimensions</span>
+    </div>
+    <button class="menu-button" id="menuButton" type="button">Main Menu</button>
+  </header>
+
+  <main>
+    <section id="menuView" aria-labelledby="pageTitle">
+      <p class="eyebrow">Civil Air Patrol Study Tool</p>
+      <h1 id="pageTitle">Choose a module</h1>
+      <p class="intro" id="menuIntro">
+        Practice questions appear in a new random order each time you select a module.
+        Work through every question before the deck reshuffles.
+      </p>
+      <div class="mode-selector" aria-label="Choose practice mode">
+        <button class="mode-button" id="studyModeButton" type="button" aria-pressed="true">
+          Study Questions
+        </button>
+        <button class="mode-button" id="quizModeButton" type="button" aria-pressed="false">
+          Quiz
+        </button>
+      </div>
+      <div class="module-grid" id="moduleGrid"></div>
+      <p class="error" id="loadError" hidden>
+        The selected question data could not be loaded. Keep
+        <strong>study-guide.html</strong>, <strong>study-guide-data.js</strong>, and
+        <strong>study-guide-quiz-data.js</strong> in the same folder, then reopen this page.
+      </p>
+    </section>
+
+    <section id="quizSetupView" hidden aria-labelledby="quizSetupTitle">
+      <div class="quiz-setup-panel">
+        <p class="eyebrow">Quiz Setup</p>
+        <h2 id="quizSetupTitle">Choose quiz length</h2>
+        <p class="intro" id="quizSetupDescription"></p>
+        <form id="quizSetupForm">
+          <label class="quiz-length-label" for="quizLength">Number of questions</label>
+          <input
+            class="quiz-length-input"
+            id="quizLength"
+            name="quizLength"
+            type="number"
+            min="1"
+            step="1"
+            required
+          >
+          <div class="actions">
+            <button class="primary-button" type="submit">Start Quiz</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="studyView" hidden aria-labelledby="activeModule">
+      <div class="study-panel">
+        <div class="study-meta">
+          <span id="activeModule"></span>
+          <span id="progress"></span>
+        </div>
+        <div class="question-area">
+          <p class="question-label">Question</p>
+          <h2 class="question" id="questionText"></h2>
+
+          <div class="quiz-choices" id="quizChoices" hidden></div>
+
+          <div class="answer" id="answerBox" hidden aria-live="polite">
+            <p class="answer-label">Answer</p>
+            <p id="answerText"></p>
+          </div>
+
+          <div class="quiz-feedback" id="quizFeedback" hidden aria-live="polite">
+            <p class="feedback-title" id="feedbackTitle"></p>
+            <p class="feedback-text" id="feedbackText"></p>
+          </div>
+
+          <div class="actions">
+            <button class="primary-button" id="actionButton" type="button">Show Answer</button>
+            <span class="keyboard-hint" id="keyboardHint">
+              Press <kbd>Space</kbd> to continue
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="study-guide-data.js"></script>
+  <script src="study-guide-quiz-data.js"></script>
+  <script>
+    (() => {
+      "use strict";
+
+      const studyData = window.STUDY_GUIDE_DATA;
+      const quizData = window.STUDY_GUIDE_QUIZ_DATA;
+      const flashcardAnswers = new Map(
+        studyData.flatMap((module) =>
+          module.questions.map((question) => [question.question, question.answer])
+        )
+      );
+      const menuView = document.getElementById("menuView");
+      const quizSetupView = document.getElementById("quizSetupView");
+      const studyView = document.getElementById("studyView");
+      const moduleGrid = document.getElementById("moduleGrid");
+      const loadError = document.getElementById("loadError");
+      const menuButton = document.getElementById("menuButton");
+      const menuIntro = document.getElementById("menuIntro");
+      const studyModeButton = document.getElementById("studyModeButton");
+      const quizModeButton = document.getElementById("quizModeButton");
+      const quizSetupTitle = document.getElementById("quizSetupTitle");
+      const quizSetupDescription = document.getElementById("quizSetupDescription");
+      const quizSetupForm = document.getElementById("quizSetupForm");
+      const quizLength = document.getElementById("quizLength");
+      const activeModule = document.getElementById("activeModule");
+      const progress = document.getElementById("progress");
+      const questionText = document.getElementById("questionText");
+      const quizChoices = document.getElementById("quizChoices");
+      const answerBox = document.getElementById("answerBox");
+      const answerText = document.getElementById("answerText");
+      const quizFeedback = document.getElementById("quizFeedback");
+      const feedbackTitle = document.getElementById("feedbackTitle");
+      const feedbackText = document.getElementById("feedbackText");
+      const actionButton = document.getElementById("actionButton");
+      const keyboardHint = document.getElementById("keyboardHint");
+
+      let currentMode = "study";
+      let selectedModule = null;
+      let pendingQuizModule = null;
+      let questionOrder = [];
+      let questionPosition = 0;
+      let answerVisible = false;
+      let quizAnswered = false;
+      let quizComplete = false;
+      let score = 0;
+      let displayedChoices = [];
+      let currentQuizQuestion = null;
+      let currentFullAnswer = "";
+
+      function shuffle(items) {
+        const result = [...items];
+        for (let index = result.length - 1; index > 0; index -= 1) {
+          const swapIndex = Math.floor(Math.random() * (index + 1));
+          [result[index], result[swapIndex]] = [result[swapIndex], result[index]];
+        }
+        return result;
+      }
+
+      function shuffledIndexes(length) {
+        return shuffle(Array.from({ length }, (_, index) => index));
+      }
+
+      function setMode(mode) {
+        currentMode = mode;
+        studyModeButton.setAttribute("aria-pressed", String(mode === "study"));
+        quizModeButton.setAttribute("aria-pressed", String(mode === "quiz"));
+        menuIntro.textContent =
+          mode === "study"
+            ? "Practice questions appear in a new random order each time you select a module. Work through every question before the deck reshuffles."
+            : "Take a multiple-choice quiz with randomized questions and answer choices. Choose a module or combine all seven.";
+        renderModuleMenu();
+      }
+
+      function renderModuleMenu() {
+        const data = currentMode === "study" ? studyData : quizData;
+        moduleGrid.replaceChildren();
+        loadError.hidden = true;
+
+        if (!Array.isArray(data) || data.length === 0) {
+          loadError.hidden = false;
+          return;
+        }
+
+        const anyModule = {
+          id: "any",
+          title: "Any Module",
+          questions: data.flatMap((module) => module.questions)
+        };
+
+        addModuleCard(anyModule, "All Modules");
+        data.forEach((module) => addModuleCard(module, `Module ${module.id}`));
+      }
+
+      function addModuleCard(module, label) {
+        const button = document.createElement("button");
+        button.className = "module-card";
+        button.type = "button";
+        button.innerHTML = `
+          <span class="module-number"></span>
+          <span class="module-title"></span>
+          <span class="question-count">${module.questions.length} questions</span>
+        `;
+        button.querySelector(".module-number").textContent = label;
+        button.querySelector(".module-title").textContent = module.title;
+        button.addEventListener("click", () => {
+          if (currentMode === "quiz") {
+            showQuizSetup(module);
+          } else {
+            startModule(module);
+          }
+        });
+        moduleGrid.appendChild(button);
+      }
+
+      function showQuizSetup(module) {
+        pendingQuizModule = module;
+        const maximum = module.questions.length;
+        const moduleName =
+          module.id === "any" ? "Any Module" : `Module ${module.id}: ${module.title}`;
+        quizSetupTitle.textContent = moduleName;
+        quizSetupDescription.textContent =
+          `Choose between 1 and ${maximum} questions. Questions will be selected randomly.`;
+        quizLength.max = String(maximum);
+        quizLength.value = String(Math.min(10, maximum));
+        menuView.hidden = true;
+        studyView.hidden = true;
+        quizSetupView.hidden = false;
+        quizLength.focus();
+        quizLength.select();
+      }
+
+      function startModule(module, questionLimit = module.questions.length) {
+        selectedModule = module;
+        questionOrder = shuffledIndexes(module.questions.length).slice(0, questionLimit);
+        questionPosition = 0;
+        score = 0;
+        quizComplete = false;
+        activeModule.textContent =
+          `${currentMode === "quiz" ? "Quiz" : "Study"} — ${
+            module.id === "any" ? "Any Module" : `Module ${module.id}: ${module.title}`
+          }`;
+        menuView.hidden = true;
+        quizSetupView.hidden = true;
+        studyView.hidden = false;
+        showQuestion();
+      }
+
+      function startConfiguredQuiz(event) {
+        event.preventDefault();
+        if (!pendingQuizModule || !quizSetupForm.reportValidity()) {
+          return;
+        }
+
+        const questionCount = Number(quizLength.value);
+        const maximum = pendingQuizModule.questions.length;
+        if (!Number.isInteger(questionCount) || questionCount < 1 || questionCount > maximum) {
+          quizLength.setCustomValidity(`Enter a whole number from 1 to ${maximum}.`);
+          quizLength.reportValidity();
+          return;
+        }
+
+        quizLength.setCustomValidity("");
+        startModule(pendingQuizModule, questionCount);
+      }
+
+      function showQuestion() {
+        const question = selectedModule.questions[questionOrder[questionPosition]];
+        answerVisible = false;
+        quizAnswered = false;
+        questionText.textContent = question.question;
+        answerBox.hidden = true;
+        quizFeedback.hidden = true;
+        quizFeedback.className = "quiz-feedback";
+        quizChoices.replaceChildren();
+        progress.textContent =
+          currentMode === "quiz"
+            ? `Question ${questionPosition + 1} of ${questionOrder.length} · Score: ${score}`
+            : `Question ${questionPosition + 1} of ${questionOrder.length}`;
+
+        if (currentMode === "quiz") {
+          showQuizChoices(question);
+        } else {
+          quizChoices.hidden = true;
+          answerText.textContent = question.answer;
+          actionButton.hidden = false;
+          actionButton.textContent = "Show Answer";
+          keyboardHint.innerHTML = "Press <kbd>Space</kbd> to continue";
+        }
+
+        questionText.focus({ preventScroll: true });
+      }
+
+      function showQuizChoices(question) {
+        currentQuizQuestion = question;
+        currentFullAnswer =
+          flashcardAnswers.get(question.question) || question.fullAnswer || question.correct;
+        const choices = [
+          { answer: question.correct, correct: true, explanation: "" },
+          ...question.incorrect.map((choice) => ({ ...choice, correct: false }))
+        ];
+        displayedChoices = shuffle(choices);
+        quizChoices.hidden = false;
+        actionButton.hidden = true;
+        keyboardHint.innerHTML =
+          "Choose an answer or press <kbd>A</kbd>, <kbd>B</kbd>, <kbd>C</kbd>, or <kbd>D</kbd>";
+
+        displayedChoices.forEach((choice, index) => {
+          const button = document.createElement("button");
+          button.className = "quiz-choice";
+          button.type = "button";
+          button.innerHTML = `
+            <span class="choice-letter">${String.fromCharCode(65 + index)}</span>
+            <span class="choice-text"></span>
+          `;
+          button.querySelector(".choice-text").textContent = choice.answer;
+          button.addEventListener("click", () => selectQuizChoice(index));
+          quizChoices.appendChild(button);
+        });
+      }
+
+      function selectQuizChoice(index) {
+        if (quizAnswered || !displayedChoices[index]) {
+          return;
+        }
+
+        quizAnswered = true;
+        const selected = displayedChoices[index];
+        const buttons = [...quizChoices.querySelectorAll(".quiz-choice")];
+
+        buttons.forEach((button, buttonIndex) => {
+          button.disabled = true;
+          if (displayedChoices[buttonIndex].correct) {
+            button.classList.add("is-correct");
+          }
+        });
+
+        quizFeedback.hidden = false;
+        if (selected.correct) {
+          score += 1;
+          feedbackTitle.textContent = "Correct!";
+          feedbackText.textContent =
+            `Correct answer: ${currentFullAnswer} ${currentQuizQuestion.correctExplanation}`;
+          quizFeedback.classList.add("is-correct");
+        } else {
+          buttons[index].classList.add("is-incorrect");
+          feedbackTitle.textContent = "Not quite.";
+          feedbackText.textContent =
+            `${selected.explanation} Correct answer: ${currentFullAnswer}`;
+          quizFeedback.classList.add("is-incorrect");
+        }
+
+        actionButton.hidden = false;
+        actionButton.textContent = "Next Question";
+        progress.textContent =
+          `Question ${questionPosition + 1} of ${questionOrder.length} · Score: ${score}`;
+        keyboardHint.innerHTML = "Press <kbd>Space</kbd> for the next question";
+        quizFeedback.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+
+      function revealAnswer() {
+        answerVisible = true;
+        answerBox.hidden = false;
+        actionButton.textContent = "Next Question";
+        answerBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+
+      function nextQuestion() {
+        questionPosition += 1;
+        if (questionPosition >= questionOrder.length) {
+          if (currentMode === "quiz") {
+            showQuizResults();
+            return;
+          }
+          questionOrder = shuffledIndexes(selectedModule.questions.length);
+          questionPosition = 0;
+        }
+        showQuestion();
+      }
+
+      function showQuizResults() {
+        const total = questionOrder.length;
+        const percentage = Math.round((score / total) * 100);
+        quizComplete = true;
+        quizChoices.hidden = true;
+        quizChoices.replaceChildren();
+        quizFeedback.hidden = true;
+        questionText.textContent = `You scored ${score} out of ${total}.`;
+        answerText.textContent = `${percentage}% correct`;
+        answerBox.hidden = false;
+        actionButton.hidden = false;
+        actionButton.textContent = "Return to Main Menu";
+        keyboardHint.innerHTML = "Press <kbd>Space</kbd> to return to the main menu";
+        progress.textContent = `Final score: ${score} of ${total}`;
+        document.querySelector(".question-label").textContent = "Quiz Complete";
+        questionText.focus({ preventScroll: true });
+      }
+
+      function performAction() {
+        if (!selectedModule) {
+          return;
+        }
+        if (currentMode === "quiz") {
+          if (quizComplete) {
+            returnToMenu();
+            return;
+          }
+          if (quizAnswered) {
+            nextQuestion();
+          }
+          return;
+        }
+        if (answerVisible) {
+          nextQuestion();
+        } else {
+          revealAnswer();
+        }
+      }
+
+      function returnToMenu() {
+        selectedModule = null;
+        questionOrder = [];
+        pendingQuizModule = null;
+        answerVisible = false;
+        quizAnswered = false;
+        quizComplete = false;
+        score = 0;
+        currentFullAnswer = "";
+        studyView.hidden = true;
+        quizSetupView.hidden = true;
+        menuView.hidden = false;
+        document.querySelector(".question-label").textContent = "Question";
+        document.getElementById("pageTitle").focus({ preventScroll: true });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      actionButton.addEventListener("click", performAction);
+      quizSetupForm.addEventListener("submit", startConfiguredQuiz);
+      quizLength.addEventListener("input", () => quizLength.setCustomValidity(""));
+      menuButton.addEventListener("click", returnToMenu);
+      studyModeButton.addEventListener("click", () => setMode("study"));
+      quizModeButton.addEventListener("click", () => setMode("quiz"));
+
+      document.addEventListener("keydown", (event) => {
+        if (studyView.hidden) {
+          return;
+        }
+        const tagName = event.target.tagName;
+        if (
+          tagName === "BUTTON" ||
+          tagName === "INPUT" ||
+          tagName === "TEXTAREA" ||
+          tagName === "SELECT"
+        ) {
+          return;
+        }
+
+        if (currentMode === "quiz" && !quizAnswered && /^[a-d]$/i.test(event.key)) {
+          event.preventDefault();
+          selectQuizChoice(event.key.toUpperCase().charCodeAt(0) - 65);
+          return;
+        }
+
+        if (event.code === "Space") {
+          event.preventDefault();
+          performAction();
+        }
+      });
+
+      questionText.tabIndex = -1;
+      document.getElementById("pageTitle").tabIndex = -1;
+      setMode("study");
+    })();
+  </script>
+</body>
+</html>
