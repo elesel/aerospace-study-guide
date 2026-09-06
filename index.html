@@ -831,10 +831,13 @@
         }
 
         actionButton.hidden = false;
-        actionButton.textContent = "Next Question";
+        const isLastQuestion = questionPosition === questionOrder.length - 1;
+        actionButton.textContent = isLastQuestion ? "Show Score" : "Next Question";
         progress.textContent =
           `Question ${questionPosition + 1} of ${questionOrder.length} · Score: ${score}`;
-        keyboardHint.innerHTML = "Press <kbd>Space</kbd> for the next question";
+        keyboardHint.innerHTML = isLastQuestion
+          ? "Press <kbd>Space</kbd> to show your score"
+          : "Press <kbd>Space</kbd> for the next question";
         quizFeedback.scrollIntoView({ behavior: "smooth", block: "nearest" });
       }
 
