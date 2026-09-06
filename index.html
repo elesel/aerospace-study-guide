@@ -479,7 +479,7 @@
       <span class="brand-mark" aria-hidden="true">✦</span>
       <span>Aerospace Dimensions</span>
     </div>
-    <button class="menu-button" id="menuButton" type="button">Main Menu</button>
+    <button class="menu-button" id="menuButton" type="button" hidden>Main Menu</button>
   </header>
 
   <main>
@@ -691,6 +691,7 @@
         menuView.hidden = true;
         studyView.hidden = true;
         quizSetupView.hidden = false;
+        menuButton.hidden = false;
         quizLength.focus();
         quizLength.select();
       }
@@ -708,6 +709,7 @@
         menuView.hidden = true;
         quizSetupView.hidden = true;
         studyView.hidden = false;
+        menuButton.hidden = false;
         showQuestion();
       }
 
@@ -894,6 +896,7 @@
         studyView.hidden = true;
         quizSetupView.hidden = true;
         menuView.hidden = false;
+        menuButton.hidden = true;
         document.querySelector(".question-label").textContent = "Question";
         document.getElementById("pageTitle").focus({ preventScroll: true });
         window.scrollTo({ top: 0, behavior: "smooth" });
