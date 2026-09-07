@@ -705,7 +705,7 @@
         quizModeButton.setAttribute("aria-pressed", String(mode === "quiz"));
         menuIntro.textContent =
           mode === "study"
-            ? "Practice questions appear in a new random order each time you select a module. Work through every question before the deck reshuffles."
+            ? "Practice questions appear in a new random order each time you select a module. Work through every question, then return to the main menu."
             : "Take a multiple-choice quiz with randomized questions and answer choices. Choose a module or combine all seven.";
         renderModuleMenu();
       }
@@ -914,7 +914,11 @@
         answerVisible = true;
         answerBox.hidden = false;
         showQuestionImage(questionText.textContent);
-        actionButton.textContent = "Next Question";
+        const isLastQuestion = questionPosition === questionOrder.length - 1;
+        actionButton.textContent = isLastQuestion ? "Return to Main Menu" : "Next Question";
+        keyboardHint.innerHTML = isLastQuestion
+          ? "Press <kbd>Space</kbd> to return to the main menu"
+          : "Press <kbd>Space</kbd> for the next question";
         answerBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
       }
 
@@ -990,7 +994,11 @@
           return;
         }
         if (answerVisible) {
-          nextQuestion();
+          if (questionPosition === questionOrder.length - 1) {
+            returnToMenu();
+          } else {
+            nextQuestion();
+          }
         } else {
           revealAnswer();
         }
