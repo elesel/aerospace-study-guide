@@ -379,6 +379,29 @@
       background: #fff1f2;
     }
 
+    .question-media {
+      margin: 1.5rem 0 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+      background: #f7fbfd;
+    }
+
+    .question-media img {
+      display: block;
+      width: 100%;
+      max-height: 34rem;
+      object-fit: contain;
+      background: var(--white);
+    }
+
+    .question-media figcaption {
+      padding: 0.75rem 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
     .feedback-title {
       margin-bottom: 0.35rem;
       font-size: 1.15rem;
@@ -558,6 +581,11 @@
             <p class="feedback-text" id="feedbackText"></p>
           </div>
 
+          <figure class="question-media" id="questionMedia" hidden>
+            <img id="questionImage" alt="">
+            <figcaption id="questionImageCaption" hidden></figcaption>
+          </figure>
+
           <div class="actions">
             <button class="primary-button" id="actionButton" type="button">Show Answer</button>
             <span class="keyboard-hint" id="keyboardHint">
@@ -571,12 +599,14 @@
 
   <script src="study-guide-data.js"></script>
   <script src="study-guide-quiz-data.js"></script>
+  <script src="study-guide-image-data.js"></script>
   <script>
     (() => {
       "use strict";
 
       const studyData = window.STUDY_GUIDE_DATA;
       const quizData = window.STUDY_GUIDE_QUIZ_DATA;
+      const imageData = window.STUDY_GUIDE_IMAGE_DATA || {};
       const flashcardAnswers = new Map(
         studyData.flatMap((module) =>
           module.questions.map((question) => [question.question, question.answer])
@@ -605,6 +635,9 @@
       const quizFeedback = document.getElementById("quizFeedback");
       const feedbackTitle = document.getElementById("feedbackTitle");
       const feedbackText = document.getElementById("feedbackText");
+      const questionMedia = document.getElementById("questionMedia");
+      const questionImage = document.getElementById("questionImage");
+      const questionImageCaption = document.getElementById("questionImageCaption");
       const actionButton = document.getElementById("actionButton");
       const keyboardHint = document.getElementById("keyboardHint");
 
@@ -748,6 +781,7 @@
         answerLabel.hidden = false;
         quizFeedback.hidden = true;
         quizFeedback.className = "quiz-feedback";
+        hideQuestionImage();
         quizChoices.replaceChildren();
         progress.textContent =
           currentMode === "quiz"
@@ -818,6 +852,7 @@
           feedbackText.textContent =
             `Correct answer: ${currentFullAnswer} ${currentQuizQuestion.correctExplanation}`;
           quizFeedback.classList.add("is-correct");
+          showQuestionImage(currentQuizQuestion.question);
         } else {
           buttons[index].classList.add("is-incorrect");
           feedbackTitle.textContent = "Not quite.";
@@ -845,8 +880,31 @@
       function revealAnswer() {
         answerVisible = true;
         answerBox.hidden = false;
+        showQuestionImage(questionText.textContent);
         actionButton.textContent = "Next Question";
         answerBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+
+      function showQuestionImage(question) {
+        const image = imageData[question];
+        if (!image) {
+          hideQuestionImage();
+          return;
+        }
+
+        questionImage.src = image.src;
+        questionImage.alt = image.alt;
+        questionImageCaption.textContent = image.caption || "";
+        questionImageCaption.hidden = !image.caption;
+        questionMedia.hidden = false;
+      }
+
+      function hideQuestionImage() {
+        questionMedia.hidden = true;
+        questionImage.removeAttribute("src");
+        questionImage.alt = "";
+        questionImageCaption.textContent = "";
+        questionImageCaption.hidden = true;
       }
 
       function nextQuestion() {
