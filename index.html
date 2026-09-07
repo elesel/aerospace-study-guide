@@ -524,6 +524,7 @@
             id="quizLength"
             name="quizLength"
             type="number"
+            inputmode="numeric"
             min="1"
             step="1"
             required
@@ -923,7 +924,14 @@
 
       actionButton.addEventListener("click", performAction);
       quizSetupForm.addEventListener("submit", startConfiguredQuiz);
-      quizLength.addEventListener("input", () => quizLength.setCustomValidity(""));
+      quizLength.addEventListener("input", () => {
+        quizLength.setCustomValidity("");
+        const maximum = Number(quizLength.max);
+        const enteredValue = Number(quizLength.value);
+        if (quizLength.value !== "" && enteredValue > maximum) {
+          quizLength.value = String(maximum);
+        }
+      });
       menuButton.addEventListener("click", returnToMenu);
       studyModeButton.addEventListener("click", () => setMode("study"));
       quizModeButton.addEventListener("click", () => setMode("quiz"));
