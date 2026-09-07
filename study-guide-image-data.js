@@ -25,9 +25,9 @@ window.STUDY_GUIDE_IMAGE_DATA = {
     "caption": "Airflow over the top of a wing accelerates and pressure drops."
   },
   "What happens if there is an increase in the angle of attack? (Page 10)": {
-    "src": "study-guide-images/angle-of-attack-lift.jpg",
-    "alt": "Wing illustrating angle of attack and lift",
-    "caption": "Increasing angle of attack creates downwash and lift until the critical angle."
+    "src": "study-guide-images/f35-angle-of-attack.jpg",
+    "alt": "F-35 lifting its nose during takeoff",
+    "caption": "A nose-up aircraft increases its wing's angle of attack to produce lift."
   },
   "What is it called if you use the elevator to rotate a plane around the lateral axis? (Page 12)": {
     "src": "study-guide-images/aircraft-pitch-elevator.jpg",
