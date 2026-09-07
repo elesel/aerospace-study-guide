@@ -19,6 +19,11 @@ window.STUDY_GUIDE_IMAGE_DATA = {
     "alt": "Animated airflow arrows moving above and below an airfoil",
     "caption": "Faster airflow over the curved upper surface contributes to lower pressure above the wing and lift."
   },
+  "Which of Newton's Laws of Motion explains how an aircraft is lifted against the force of gravity? (Page 6)": {
+    "src": "study-guide-images/newtons-third-law-hand-airflow.jpg",
+    "alt": "Hand held in moving air like a wing",
+    "caption": "A hand in moving air demonstrates Newton's Third Law: airflow pushes the hand upward as the hand deflects air."
+  },
   "What happens to air traveling over the wing? (Page 8)": {
     "src": "study-guide-images/airfoil-airflow-lift.gif",
     "alt": "Animated airflow arrows moving above and below an airfoil",
@@ -28,6 +33,16 @@ window.STUDY_GUIDE_IMAGE_DATA = {
     "src": "study-guide-images/f35-angle-of-attack.jpg",
     "alt": "F-35 lifting its nose during takeoff",
     "caption": "A nose-up aircraft increases its wing's angle of attack to produce lift."
+  },
+  "Which force opposes drag? (Page 11)": {
+    "src": "study-guide-images/four-forces-thrust-drag.jpg",
+    "alt": "Aircraft with thrust and drag arrows pointing in opposite directions",
+    "caption": "Thrust acts forward in direct opposition to drag."
+  },
+  "Which force takes a mechanical device, like an engine and propeller, to generate it? (Page 11)": {
+    "src": "study-guide-images/four-forces-thrust-drag.jpg",
+    "alt": "Propeller aircraft with a forward thrust arrow",
+    "caption": "An engine-driven propeller generates the aircraft's forward thrust."
   },
   "What is it called if you use the elevator to rotate a plane around the lateral axis? (Page 12)": {
     "src": "study-guide-images/aircraft-pitch-elevator.jpg",
