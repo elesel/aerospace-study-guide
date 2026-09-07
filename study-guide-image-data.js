@@ -10,19 +10,19 @@ window.STUDY_GUIDE_IMAGE_DATA = {
     "caption": "The first recorded powered flight was aboard a Montgolfier brothers' hot-air balloon."
   },
   "What did Bernoulli discover about fluids being accelerated? (Page 5)": {
-    "src": "study-guide-images/bernoulli-pressure-velocity.svg",
-    "alt": "Diagram comparing fluid velocity and pressure",
-    "caption": "Higher fluid velocity through a restriction corresponds to lower pressure."
+    "src": "study-guide-images/bernoulli-venturi-pressure-diagram.svg",
+    "alt": "Venturi diagram comparing fluid speed and pressure",
+    "caption": "As fluid accelerates through the narrow section, its pressure decreases."
   },
   "Because of Bernoulli's principle, what happens with wings? (Page 5)": {
-    "src": "study-guide-images/bernoulli-pressure-velocity.svg",
-    "alt": "Diagram comparing fluid velocity and pressure",
-    "caption": "Air accelerates over an airfoil and its pressure drops."
+    "src": "study-guide-images/airfoil-airflow-lift.gif",
+    "alt": "Animated airflow arrows moving above and below an airfoil",
+    "caption": "Faster airflow over the curved upper surface contributes to lower pressure above the wing and lift."
   },
   "What happens to air traveling over the wing? (Page 8)": {
-    "src": "study-guide-images/bernoulli-pressure-velocity.svg",
-    "alt": "Diagram comparing fluid velocity and pressure",
-    "caption": "Airflow over the top of a wing accelerates and pressure drops."
+    "src": "study-guide-images/airfoil-airflow-lift.gif",
+    "alt": "Animated airflow arrows moving above and below an airfoil",
+    "caption": "Air traveling over the upper surface moves faster and produces downwash behind the wing."
   },
   "What happens if there is an increase in the angle of attack? (Page 10)": {
     "src": "study-guide-images/f35-angle-of-attack.jpg",
