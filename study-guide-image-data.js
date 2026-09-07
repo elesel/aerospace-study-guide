@@ -1,13 +1,8 @@
 window.STUDY_GUIDE_IMAGE_DATA = {
   "What was the first true powered aircraft with humans on board? (Page 3)": {
     "src": "study-guide-images/first-manned-hot-air-balloon.jpg",
-    "alt": "Early manned hot-air balloon",
+    "alt": "Hot-air balloon in flight",
     "caption": "Balloons were the first known powered aircraft with humans aboard."
-  },
-  "Who created the first hot-air balloon? (Page 3)": {
-    "src": "study-guide-images/first-manned-hot-air-balloon.jpg",
-    "alt": "Early manned hot-air balloon",
-    "caption": "The first recorded powered flight was aboard a Montgolfier brothers' hot-air balloon."
   },
   "What did Bernoulli discover about fluids being accelerated? (Page 5)": {
     "src": "study-guide-images/bernoulli-venturi-pressure-diagram.svg",
@@ -104,20 +99,10 @@ window.STUDY_GUIDE_IMAGE_DATA = {
     "alt": "Animated trade winds curving under the Coriolis effect",
     "caption": "The Coriolis effect makes Northern Hemisphere winds appear to curve."
   },
-  "How high does the jet stream cross the U.S.? (Page 7)": {
-    "src": "study-guide-images/jet-stream-motion.gif",
-    "alt": "Animated west-to-east jet stream over the United States",
-    "caption": "The jet stream crosses the United States at about 30,000–35,000 feet."
-  },
   "What direction does the jet stream move? (Page 7)": {
     "src": "study-guide-images/jet-stream-motion.gif",
     "alt": "Animated west-to-east jet stream over the United States",
     "caption": "The jet stream generally crosses from west to east."
-  },
-  "What speed do the jet stream winds blow? (Page 8)": {
-    "src": "study-guide-images/jet-stream-motion.gif",
-    "alt": "Animated west-to-east jet stream over the United States",
-    "caption": "Jet-stream winds are typically 100–300 miles per hour."
   },
   "What is wind and how is it described? (Page 11)": {
     "src": "study-guide-images/beaufort-wind-scale.svg",
@@ -176,17 +161,17 @@ window.STUDY_GUIDE_IMAGE_DATA = {
   },
   "What did Dr. Robert H. Goddard achieve in 1926? (Page 3)": {
     "src": "study-guide-images/robert-goddard-liquid-fuel-rocket.jpg",
-    "alt": "Robert Goddard with an early liquid-fuel rocket",
+    "alt": "Labeled schematic of Goddard's liquid-fuel rocket",
     "caption": "Goddard achieved the first successful liquid-propellant rocket flight in 1926."
   },
   "What were the first liquid-propellant rockets fueled by? (Page 3)": {
     "src": "study-guide-images/robert-goddard-liquid-fuel-rocket.jpg",
-    "alt": "Robert Goddard with an early liquid-fuel rocket",
+    "alt": "Labeled schematic of Goddard's liquid-fuel rocket",
     "caption": "Goddard's first successful liquid-fuel rocket used liquid oxygen and gasoline."
   },
   "What is Dr. Goddard known as? (Page 3)": {
     "src": "study-guide-images/robert-goddard-liquid-fuel-rocket.jpg",
-    "alt": "Robert Goddard with an early liquid-fuel rocket",
+    "alt": "Labeled schematic of Goddard's liquid-fuel rocket",
     "caption": "Robert Goddard is known as the father of modern rocketry."
   },
   "Who built the V-2 during World War II? (Page 4)": {
@@ -199,19 +184,14 @@ window.STUDY_GUIDE_IMAGE_DATA = {
     "alt": "German V-2 rocket",
     "caption": "Wernher von Braun later headed the U.S. rocket program."
   },
-  "Who organized and led the development of the first successful intercontinental ballistic missile in August 1957? (Page 4)": {
-    "src": "study-guide-images/sergei-korolev-sputnik.jpg",
-    "alt": "Sergei Korolev and the Sputnik era",
-    "caption": "Sergei Korolev led development of the Soviet ICBM in August 1957."
-  },
   "What does a launch vehicle do? (Page 5)": {
     "src": "study-guide-images/early-us-launch-vehicles.jpg",
     "alt": "Early United States launch vehicles",
     "caption": "Launch vehicles propel payloads beyond Earth or into orbit."
   },
   "What happened on October 4, 1957? (Page 5)": {
-    "src": "study-guide-images/sergei-korolev-sputnik.jpg",
-    "alt": "Sputnik I and its Soviet rocket program",
+    "src": "study-guide-images/sputnik-1-satellite.jpg",
+    "alt": "Sputnik 1 satellite with four antennas",
     "caption": "Sputnik I launched on October 4, 1957."
   },
   "Who was the first man in space? (Page 6)": {
@@ -315,13 +295,13 @@ window.STUDY_GUIDE_IMAGE_DATA = {
     "caption": "Radiation in the inner belt is hazardous to astronauts."
   },
   "What is our only star? (Page 14)": {
-    "src": "study-guide-images/sun-closest-star.jpg",
-    "alt": "The Sun, Earth's closest and only solar-system star",
+    "src": "study-guide-images/sun-star-apparent-brightness.jpg",
+    "alt": "The Sun glowing against a field of stars",
     "caption": "The Sun is the only star in our solar system."
   },
   "What is the apparent magnitude of a star? (Page 15)": {
-    "src": "study-guide-images/sun-apparent-magnitude.jpg",
-    "alt": "The Sun as an example of apparent magnitude",
+    "src": "study-guide-images/sun-star-apparent-brightness.jpg",
+    "alt": "The bright Sun as seen from Earth",
     "caption": "Apparent magnitude describes brightness as seen from Earth."
   },
   "What is the temperature of a class M star? (Page 16)": {
@@ -364,11 +344,6 @@ window.STUDY_GUIDE_IMAGE_DATA = {
     "alt": "Dark sunspots on the Sun's visible surface",
     "caption": "Sunspots are cooler, darker areas of the Sun's surface."
   },
-  "Since the gravitational pull of the Moon is one-sixth that of Earth, if someone weighs 120 pounds on Earth, how much would they weigh on the Moon? (Page 28)": {
-    "src": "study-guide-images/moon-gravity-weight.jpg",
-    "alt": "Illustration of weight under the Moon's one-sixth gravity",
-    "caption": "Moon weight is found by dividing Earth weight by six."
-  },
   "What phase of the Moon has just a small sliver showing? (Page 30)": {
     "src": "study-guide-images/moon-phases.jpg",
     "alt": "Diagram of the Moon's phases",
@@ -376,18 +351,13 @@ window.STUDY_GUIDE_IMAGE_DATA = {
   },
   "What is described as a great dirty snowball? (Page 31)": {
     "src": "study-guide-images/comet-life-cycle.jpg",
-    "alt": "Diagram of a comet's life cycle",
+    "alt": "Comet with a bright coma and tail against a star field",
     "caption": "A comet is often described as a dirty snowball of ice, dust, and rock."
   },
   "Which planet is closest to the Sun? (Page 38)": {
     "src": "study-guide-images/solar-system-planets.jpg",
-    "alt": "Labeled overview of the eight planets",
+    "alt": "The eight planets shown in order outward from the Sun",
     "caption": "Mercury is the planet closest to the Sun."
-  },
-  "How fast does Mercury revolve around the Sun? (Page 38)": {
-    "src": "study-guide-images/solar-system-planets.jpg",
-    "alt": "Labeled overview of the eight planets",
-    "caption": "Mercury takes 88 days to revolve around the Sun."
   },
   "How far is Earth from the Sun? (Page 40)": {
     "src": "study-guide-images/earth-sun-astronomical-unit.jpg",
@@ -396,28 +366,18 @@ window.STUDY_GUIDE_IMAGE_DATA = {
   },
   "Which is the largest planet in the solar system? (Page 43)": {
     "src": "study-guide-images/solar-system-planets.jpg",
-    "alt": "Labeled overview of the eight planets",
+    "alt": "The eight planets shown at comparative sizes",
     "caption": "Jupiter is the largest planet in the solar system."
   },
   "What are the most recognizable features of Saturn? (Page 45)": {
     "src": "study-guide-images/solar-system-planets.jpg",
-    "alt": "Labeled overview of the eight planets",
+    "alt": "Solar-system planets with Saturn's broad rings visible",
     "caption": "Saturn is recognized by its prominent rings."
-  },
-  "Which planet was discovered by William Herschel in 1781? (Page 47)": {
-    "src": "study-guide-images/solar-system-planets.jpg",
-    "alt": "Labeled overview of the eight planets",
-    "caption": "Uranus was discovered by William Herschel in 1781."
   },
   "Which two planets are sometimes called twins? (Page 48)": {
     "src": "study-guide-images/solar-system-planets.jpg",
-    "alt": "Labeled overview of the eight planets",
+    "alt": "The similarly sized outer planets Uranus and Neptune",
     "caption": "Uranus and Neptune are similarly sized ice giants sometimes called twins."
-  },
-  "Which planet has winds of 1,500 miles per hour? (Page 48)": {
-    "src": "study-guide-images/solar-system-planets.jpg",
-    "alt": "Labeled overview of the eight planets",
-    "caption": "Neptune has winds reaching about 1,500 miles per hour."
   },
   "What is the highest point of an orbit? (Page 1)": {
     "src": "study-guide-images/satellite-elliptical-orbit.gif",
@@ -426,17 +386,17 @@ window.STUDY_GUIDE_IMAGE_DATA = {
   },
   "What does GPS stand for? (Page 1)": {
     "src": "study-guide-images/gps-navigation-satellite.jpg",
-    "alt": "Navigation satellite supporting GPS positioning",
+    "alt": "Phone displaying turn-by-turn GPS navigation",
     "caption": "GPS stands for Global Positioning System."
   },
   "Which satellites locate natural resources and monitor conditions of Earth's surface? (Page 1)": {
     "src": "study-guide-images/landsat-natural-resources-satellite.jpg",
-    "alt": "Natural-resources satellite monitoring Earth",
+    "alt": "Satellite view of natural features on Earth's surface",
     "caption": "Landsat satellites monitor natural conditions and resources on Earth."
   },
   "What is Earth's only natural satellite? (Page 1)": {
-    "src": "study-guide-images/satellite-elliptical-orbit.gif",
-    "alt": "Animated Moon and satellite orbit around Earth",
+    "src": "study-guide-images/apollo-moon-natural-satellite.png",
+    "alt": "Astronaut standing on the Moon's surface",
     "caption": "The Moon is Earth's only natural satellite."
   },
   "What kind of satellite was GOES 8? (Page 4)": {
@@ -445,44 +405,34 @@ window.STUDY_GUIDE_IMAGE_DATA = {
     "caption": "GOES 8 was a geostationary weather satellite."
   },
   "What was America's first manned spaceflight program called? (Page 17)": {
-    "src": "study-guide-images/mercury-gemini-missions.png",
-    "alt": "Timeline of Project Mercury and Gemini missions",
+    "src": "study-guide-images/mercury-seven-astronauts.png",
+    "alt": "The seven astronauts selected for Project Mercury",
     "caption": "Project Mercury was America's first crewed spaceflight program."
   },
   "Who was the first American to orbit Earth? (Page 18)": {
-    "src": "study-guide-images/mercury-gemini-missions.png",
-    "alt": "Timeline of Project Mercury and Gemini missions",
+    "src": "study-guide-images/john-glenn-mercury-astronaut.jpg",
+    "alt": "Mercury astronaut John Glenn in his spacesuit",
     "caption": "John Glenn became the first American to orbit Earth."
   },
   "Which project used the first two-man capsule? (Page 18)": {
-    "src": "study-guide-images/mercury-gemini-missions.png",
-    "alt": "Timeline of Project Mercury and Gemini missions",
+    "src": "study-guide-images/gemini-two-person-spacecraft.png",
+    "alt": "Cutaway of the two-person Gemini spacecraft",
     "caption": "Project Gemini used the first two-person capsule."
   },
   "Which mission achieved the first U.S. \"space walk\"? (Page 18)": {
-    "src": "study-guide-images/mercury-gemini-missions.png",
-    "alt": "Timeline of Project Mercury and Gemini missions",
+    "src": "study-guide-images/gemini-two-person-spacecraft.png",
+    "alt": "Cutaway of the two-person Gemini spacecraft",
     "caption": "Gemini IV included the first United States spacewalk."
   },
   "What did Apollo 11 do? (Page 19)": {
-    "src": "study-guide-images/apollo-moon-missions.png",
-    "alt": "Timeline of Apollo Moon missions",
+    "src": "study-guide-images/apollo-moon-natural-satellite.png",
+    "alt": "Apollo astronaut standing beside the United States flag on the Moon",
     "caption": "Apollo 11 completed the first crewed lunar landing."
   },
   "What was Skylab's mission? (Page 20)": {
     "src": "study-guide-images/skylab-mission.png",
     "alt": "NASA Skylab orbital laboratory",
     "caption": "Skylab tested the effects of extended time in space on the human body."
-  },
-  "Which mission was the first operational flight and launched two satellites? (Page 21)": {
-    "src": "study-guide-images/space-shuttle-missions.jpg",
-    "alt": "Space Shuttle during an operational mission",
-    "caption": "STS-5 was the first operational Shuttle flight and launched two satellites."
-  },
-  "Who was the first American woman in space? Which spacecraft? Which mission was it? (Page 21)": {
-    "src": "study-guide-images/space-shuttle-missions.jpg",
-    "alt": "Space Shuttle during an operational mission",
-    "caption": "Sally Ride flew aboard Challenger on STS-7."
   },
   "What happened in April 1990? (Page 22)": {
     "src": "study-guide-images/hubble-space-telescope.jpg",
@@ -491,52 +441,12 @@ window.STUDY_GUIDE_IMAGE_DATA = {
   },
   "What is the act of using a computer to gain unauthorized access to data in a system? (Page 18)": {
     "src": "study-guide-images/computer-as-cyberattack-target.jpg",
-    "alt": "Computer shown as a target of hacking, malware, botnets, and denial of service",
+    "alt": "Computer screen displaying a security warning",
     "caption": "Hacking uses computers to gain unauthorized access to systems or data."
-  },
-  "What are black-hat hackers? (Page 24)": {
-    "src": "study-guide-images/hacker-hat-types.jpg",
-    "alt": "Labeled comparison of black-, white-, and gray-hat hackers",
-    "caption": "Black-hat hackers use computing skills for malicious or criminal acts."
-  },
-  "What are the \"good guys\" who use their computing skills for ethical and legal reasons, such as testing a system's vulnerabilities, called? (Page 24)": {
-    "src": "study-guide-images/hacker-hat-types.jpg",
-    "alt": "Labeled comparison of black-, white-, and gray-hat hackers",
-    "caption": "White-hat hackers use their skills ethically to test vulnerabilities."
-  },
-  "What is a keylogger? (Page 25)": {
-    "src": "study-guide-images/keylogger-attack.jpg",
-    "alt": "Illustration of software recording computer keystrokes",
-    "caption": "A keylogger secretly captures every keystroke, including passwords and private data."
-  },
-  "What are computer cookies? (Page 39)": {
-    "src": "study-guide-images/browser-cookies-and-privacy.jpg",
-    "alt": "Web browser privacy and cookie controls",
-    "caption": "Browser cookies store information used by websites and can affect privacy."
-  },
-  "What is incognito mode? (Page 41)": {
-    "src": "study-guide-images/browser-incognito-mode.jpg",
-    "alt": "Browser incognito mode privacy step",
-    "caption": "Incognito mode prevents cookies and history from being recorded on a shared device."
   },
   "What is a form of online harassment that uses electronic communication to intimidate or threaten a person or group of people? (Page 51)": {
     "src": "study-guide-images/cyberbullying.jpg",
-    "alt": "Illustration accompanying the definition of cyberbullying",
+    "alt": "Hostile message reading “You're ugly” being entered on a phone",
     "caption": "Cyberbullying uses electronic communication for threats, rumors, and other harassment."
-  },
-  "What is cyberstalking? (Page 51)": {
-    "src": "study-guide-images/cyberstalking.jpg",
-    "alt": "Illustration accompanying the definition of cyberstalking",
-    "caption": "Cyberstalking uses electronic communication to harass or stalk another person."
-  },
-  "What can threaten the victim's safety? (Page 51)": {
-    "src": "study-guide-images/cyberstalking.jpg",
-    "alt": "Illustration accompanying the definition of cyberstalking",
-    "caption": "Cyberstalking can threaten a target's safety."
-  },
-  "What is cyber trolling? (Page 52)": {
-    "src": "study-guide-images/cyber-trolling.jpg",
-    "alt": "Illustration accompanying the definition of online trolling",
-    "caption": "Cyber trolls provoke victims and cause mischief on digital platforms."
   }
 };
