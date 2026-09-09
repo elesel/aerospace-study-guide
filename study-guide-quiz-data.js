@@ -3841,23 +3841,23 @@ window.STUDY_GUIDE_QUIZ_DATA = [
       },
       {
         "question": "To which level of cybersecurity do security specialist and cybersecurity investigator belong? (Page 63)",
-        "correct": "Mid-level",
+        "correct": "Entry-level",
         "incorrect": [
           {
-            "answer": "Entry-level",
-            "explanation": "Entry-level roles are designed for newcomers building foundational skills. Both roles require enough practical experience to analyze alerts, investigate evidence, and apply controls independently, fitting the mid-level career tier."
+            "answer": "Mid-level",
+            "explanation": "Mid-level roles generally suit professionals with three to five years of cybersecurity experience. The career chart places security specialist and cybersecurity investigator at entry level."
           },
           {
             "answer": "Advanced level",
-            "explanation": "Advanced roles design strategy, architecture, and organization-wide controls. Both roles require enough practical experience to analyze alerts, investigate evidence, and apply controls independently, fitting the mid-level career tier."
+            "explanation": "Advanced roles develop security strategy, architecture, and organization-wide controls. Security specialist and cybersecurity investigator are identified as entry-level roles."
           },
           {
             "answer": "Executive level",
-            "explanation": "Executive roles direct organizational risk and security priorities. Both roles require enough practical experience to analyze alerts, investigate evidence, and apply controls independently, fitting the mid-level career tier."
+            "explanation": "Executive roles direct organization-wide risk and security priorities. Security specialist and cybersecurity investigator are identified as entry-level roles."
           }
         ],
-        "correctExplanation": "Both roles require enough practical experience to analyze alerts, investigate evidence, and apply controls independently, fitting the mid-level career tier.",
-        "fullAnswer": "Mid-level."
+        "correctExplanation": "The career chart places security specialist and cybersecurity investigator among entry-level roles for people beginning cybersecurity work.",
+        "fullAnswer": "Entry-level."
       },
       {
         "question": "Which level of cybersecurity develops security strategies to prevent threats? (Page 63)",

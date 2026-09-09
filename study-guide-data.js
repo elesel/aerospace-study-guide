@@ -229,7 +229,7 @@ window.STUDY_GUIDE_DATA = [
       {"question": "Who is someone who uses the internet to cause psychological, emotional, sexual, or physical harm to a victim? (Page 51)", "answer": "A cyberpredator."},
       {"question": "What is cyber trolling? (Page 52)", "answer": "Deliberately posting disruptive or inflammatory online content to provoke, upset, or cause mischief toward others."},
       {"question": "Which level of cybersecurity is ideal for individuals with three to five years of cybersecurity experience? (Page 62)", "answer": "Mid-level."},
-      {"question": "To which level of cybersecurity do security specialist and cybersecurity investigator belong? (Page 63)", "answer": "Mid-level."},
+      {"question": "To which level of cybersecurity do security specialist and cybersecurity investigator belong? (Page 63)", "answer": "Entry-level."},
       {"question": "Which level of cybersecurity develops security strategies to prevent threats? (Page 63)", "answer": "Advanced level, including roles such as security architect."},
       {"question": "Which level of cybersecurity manages and monitors security measures? (Page 63)", "answer": "Advanced level, including roles such as security manager."}
     ]
