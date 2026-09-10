@@ -721,16 +721,36 @@
           return;
         }
 
+        const allQuestions = data.flatMap((module) =>
+          module.questions.map((question) => ({ ...question, moduleId: module.id }))
+        );
         const anyModule = {
           id: "any",
           title: "Any Module",
-          questions: data.flatMap((module) =>
-            module.questions.map((question) => ({ ...question, moduleId: module.id }))
-          )
+          showModuleNumbers: true,
+          questions: allQuestions
+        };
+        const dates = {
+          id: "dates",
+          title: "Dates",
+          showModuleNumbers: true,
+          questions: allQuestions.filter(isDateQuestion)
         };
 
         addModuleCard(anyModule, "All Modules");
+        addModuleCard(dates, "All Modules");
         data.forEach((module) => addModuleCard(module, `Module ${module.id}`));
+      }
+
+      function isDateQuestion(question) {
+        const fullAnswer = question.answer || question.fullAnswer || "";
+        return (
+          /^When\b/i.test(question.question) ||
+          /\b\d{4}\b/.test(`${question.question} ${fullAnswer}`) ||
+          /\b(?:first|second|third|fourth|\d+(?:st|nd|rd|th)) century\b/i.test(
+            `${question.question} ${fullAnswer}`
+          )
+        );
       }
 
       function addModuleCard(module, label) {
@@ -780,7 +800,7 @@
         quizComplete = false;
         activeModule.textContent =
           `${currentMode === "quiz" ? "Quiz" : "Study"} — ${
-            module.id === "any" ? "Any Module" : `Module ${module.id}: ${module.title}`
+            module.showModuleNumbers ? module.title : `Module ${module.id}: ${module.title}`
           }`;
         menuView.hidden = true;
         quizSetupView.hidden = true;
@@ -838,7 +858,7 @@
       }
 
       function formatQuestion(question) {
-        if (selectedModule.id !== "any" || !question.moduleId) {
+        if (!selectedModule.showModuleNumbers || !question.moduleId) {
           return question.question;
         }
 
