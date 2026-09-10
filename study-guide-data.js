@@ -121,7 +121,7 @@ window.STUDY_GUIDE_DATA = [
       {"question": "Which galaxy is a huge collection of stars arranged in a spiral shape? (Page 6)", "answer": "A spiral galaxy; the Milky Way is one example."},
       {"question": "What is the area called where particles are so numerous that they form doughnut-shaped clouds with Earth at the center, stretching thousands of miles above Earth's surface over the equator? (Page 7)", "answer": "The Van Allen radiation belts, also called radbelts."},
       {"question": "What do most people instinctively fear because of its biological effects? (Page 9)", "answer": "Radiation."},
-      {"question": "How much environmental radiation does the average person get per year? (Page 15)", "answer": "About 360 millirem per year from natural and man-made background sources."},
+      {"question": "How much environmental radiation does the average person get per year? (Page 9)", "answer": "About 360 millirem per year from natural and man-made background sources."},
       {"question": "What is our only star? (Page 14)", "answer": "The Sun."},
       {"question": "What is a light-year? (Page 15)", "answer": "The distance light travels through a vacuum in one year."},
       {"question": "How far does light travel in a light-year? (Page 15)", "answer": "Approximately 6 trillion miles (about 5.88 trillion miles)."},

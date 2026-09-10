@@ -1908,7 +1908,7 @@ window.STUDY_GUIDE_QUIZ_DATA = [
         "fullAnswer": "Radiation."
       },
       {
-        "question": "How much environmental radiation does the average person get per year? (Page 15)",
+        "question": "How much environmental radiation does the average person get per year? (Page 9)",
         "correct": "About 360 millirem per year",
         "incorrect": [
           {
