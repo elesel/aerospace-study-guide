@@ -683,6 +683,7 @@
       let quizComplete = false;
       let score = 0;
       let displayedChoices = [];
+      let currentQuestion = null;
       let currentQuizQuestion = null;
       let currentFullAnswer = "";
 
@@ -723,7 +724,9 @@
         const anyModule = {
           id: "any",
           title: "Any Module",
-          questions: data.flatMap((module) => module.questions)
+          questions: data.flatMap((module) =>
+            module.questions.map((question) => ({ ...question, moduleId: module.id }))
+          )
         };
 
         addModuleCard(anyModule, "All Modules");
@@ -806,9 +809,10 @@
 
       function showQuestion() {
         const question = selectedModule.questions[questionOrder[questionPosition]];
+        currentQuestion = question;
         answerVisible = false;
         quizAnswered = false;
-        questionText.textContent = question.question;
+        questionText.textContent = formatQuestion(question);
         answerBox.hidden = true;
         answerLabel.hidden = false;
         quizFeedback.hidden = true;
@@ -831,6 +835,17 @@
         }
 
         questionText.focus({ preventScroll: true });
+      }
+
+      function formatQuestion(question) {
+        if (selectedModule.id !== "any" || !question.moduleId) {
+          return question.question;
+        }
+
+        return question.question.replace(
+          /\(Page ([^)]+)\)$/,
+          `(Module ${question.moduleId}, Page $1)`
+        );
       }
 
       function showQuizChoices(question) {
@@ -913,7 +928,7 @@
       function revealAnswer() {
         answerVisible = true;
         answerBox.hidden = false;
-        showQuestionImage(questionText.textContent);
+        showQuestionImage(currentQuestion.question);
         const isLastQuestion = questionPosition === questionOrder.length - 1;
         actionButton.textContent = isLastQuestion ? "Return to Main Menu" : "Next Question";
         keyboardHint.innerHTML = isLastQuestion
@@ -1013,6 +1028,7 @@
         quizComplete = false;
         score = 0;
         currentFullAnswer = "";
+        currentQuestion = null;
         studyView.hidden = true;
         quizSetupView.hidden = true;
         menuView.hidden = false;

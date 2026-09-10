@@ -1729,23 +1729,23 @@ window.STUDY_GUIDE_QUIZ_DATA = [
     "questions": [
       {
         "question": "How high above Earth does an orbiting object need to be to stay in orbit? (Page 2)",
-        "correct": "About 100 miles (160 kilometers)",
+        "correct": "About 80–90 miles",
         "incorrect": [
           {
-            "answer": "About 50 miles (80 kilometers)",
-            "explanation": "At roughly 50 miles, atmospheric drag remains too strong for sustained orbit. Below roughly this altitude, enough residual atmosphere remains to slow an unpowered object rapidly; higher orbits still decay, but usually much more slowly."
+            "answer": "About 40–50 miles",
+            "explanation": "Around 40–50 miles is within the upper atmosphere but below the module’s stated orbital altitude of about 80–90 miles."
           },
           {
-            "answer": "About 250 miles (400 kilometers)",
-            "explanation": "A 250-mile orbit is viable but well above the cited minimum. Below roughly this altitude, enough residual atmosphere remains to slow an unpowered object rapidly; higher orbits still decay, but usually much more slowly."
+            "answer": "About 100–110 miles",
+            "explanation": "Objects can orbit around 100–110 miles, but that is higher than the approximately 80–90-mile figure given by the module."
           },
           {
-            "answer": "About 500 miles (800 kilometers)",
-            "explanation": "A 500-mile orbit is viable but far above the cited minimum. Below roughly this altitude, enough residual atmosphere remains to slow an unpowered object rapidly; higher orbits still decay, but usually much more slowly."
+            "answer": "About 150–160 miles",
+            "explanation": "An altitude of 150–160 miles supports orbit, but it is well above the module’s stated 80–90-mile answer."
           }
         ],
-        "correctExplanation": "Below roughly this altitude, enough residual atmosphere remains to slow an unpowered object rapidly; higher orbits still decay, but usually much more slowly.",
-        "fullAnswer": "About 100 miles (160 kilometers) or higher, above most atmospheric drag."
+        "correctExplanation": "The module places the altitude at which an object can reach orbit at approximately 80–90 miles above Earth.",
+        "fullAnswer": "About 80–90 miles above Earth."
       },
       {
         "question": "What is the average temperature of outer space? (Page 3)",

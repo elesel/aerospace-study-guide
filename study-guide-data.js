@@ -112,7 +112,7 @@ window.STUDY_GUIDE_DATA = [
     "id": 5,
     "title": "Space Environment",
     "questions": [
-      {"question": "How high above Earth does an orbiting object need to be to stay in orbit? (Page 2)", "answer": "About 100 miles (160 kilometers) or higher, above most atmospheric drag."},
+      {"question": "How high above Earth does an orbiting object need to be to stay in orbit? (Page 2)", "answer": "About 80–90 miles above Earth."},
       {"question": "What is the average temperature of outer space? (Page 3)", "answer": "About 3 kelvins, or approximately −454°F (−270°C)."},
       {"question": "What is Kelvin? (Page 3)", "answer": "An absolute temperature scale whose zero is absolute zero, the lowest possible temperature."},
       {"question": "What is the space between Earth and the Moon called? (Page 5)", "answer": "Cislunar space."},
