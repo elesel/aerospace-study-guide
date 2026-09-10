@@ -550,7 +550,7 @@ window.STUDY_GUIDE_QUIZ_DATA = [
         "fullAnswer": "A 12- or 24-volt direct-current electrical system."
       },
       {
-        "question": "What supplies the electrical power? (Page 9)",
+        "question": "What supplies electrical power to a plane? (Page 9)",
         "correct": "An engine-driven alternator or generator",
         "incorrect": [
           {

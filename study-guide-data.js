@@ -36,7 +36,7 @@ window.STUDY_GUIDE_DATA = [
       {"question": "What is the stoichiometric ratio? What makes up the ratio? (Page 5)", "answer": "The ideal fuel-air mixture in which all fuel burns: about 15 parts air to 1 part gasoline by weight."},
       {"question": "What happens if you run a lean mixture for too long? (Page 5)", "answer": "The engine can run excessively hot, causing detonation, preignition, and engine damage."},
       {"question": "What kind of electrical system are most airplanes equipped with? (Page 9)", "answer": "A 12- or 24-volt direct-current electrical system."},
-      {"question": "What supplies the electrical power? (Page 9)", "answer": "An engine-driven alternator or generator supplies power and charges the battery; the battery supplies starting and backup power."},
+      {"question": "What supplies electrical power to a plane? (Page 9)", "answer": "An engine-driven alternator or generator supplies power and charges the battery; the battery supplies starting and backup power."},
       {"question": "What is the average pressure at sea level? (Page 12)", "answer": "14.7 pounds per square inch, equivalent to 29.92 inches of mercury."},
       {"question": "What is a nautical mile? (Page 38)", "answer": "A unit of distance equal to approximately 6,076 feet."}
     ]
