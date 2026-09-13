@@ -730,27 +730,9 @@
           showModuleNumbers: true,
           questions: allQuestions
         };
-        const dates = {
-          id: "dates",
-          title: "Dates",
-          showModuleNumbers: true,
-          questions: allQuestions.filter(isDateQuestion)
-        };
 
         addModuleCard(anyModule, "All Modules");
-        addModuleCard(dates, "All Modules");
         data.forEach((module) => addModuleCard(module, `Module ${module.id}`));
-      }
-
-      function isDateQuestion(question) {
-        const fullAnswer = question.answer || question.fullAnswer || "";
-        return (
-          /^When\b/i.test(question.question) ||
-          /\b\d{4}\b/.test(`${question.question} ${fullAnswer}`) ||
-          /\b(?:first|second|third|fourth|\d+(?:st|nd|rd|th)) century\b/i.test(
-            `${question.question} ${fullAnswer}`
-          )
-        );
       }
 
       function addModuleCard(module, label) {
